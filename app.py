@@ -16,9 +16,9 @@ COINMARKETAPIKEY = os.environ.get("COINMARKETAPIKEY")
 @app.route("/ed89d968-3acb-4818-ad82-c8fd9f5447e5-c627154e-be84-48f3-af89-7c4878777d4c")
 def helium():
     COINMARKETAPIKEY = os.environ.get("COINMARKETAPIKEY")
-    helium_data = get_stock_info(COINMARKETAPIKEY)
-    helium_price_USD = helium_data["quote"]["USD"]["price"]
-    helium_price_USD = helium_price_USD * 100 // 1 / 100
+    helium_price_USD = get_stock_info(COINMARKETAPIKEY)
+    # helium_price_USD = helium_data["quote"]["USD"]["price"]
+    # helium_price_USD = helium_price_USD * 100 // 1 / 100
     send_to_slack(helium_price_USD)
     return str(helium_price_USD)
 
