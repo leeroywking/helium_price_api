@@ -19,7 +19,7 @@ def helium():
     helium_price_USD = get_stock_info(COINMARKETAPIKEY)
     # helium_price_USD = helium_data["quote"]["USD"]["price"]
     # helium_price_USD = helium_price_USD * 100 // 1 / 100
-    send_to_slack(helium_price_USD)
+    send_to_slack(helium_price_USD * 100 // 1 / 100)
     return str(helium_price_USD)
 
 if __name__ == '__main__':
